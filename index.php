@@ -1,6 +1,9 @@
 <?php 
 $submit = filter_input(INPUT_POST, 'submit');
+if(isset($_POST['genres']))
+{
 $genres = $_POST['genres'];
+}
 ?>
  
 
@@ -21,8 +24,14 @@ $genres = $_POST['genres'];
     <?php
     if(isset($submit)) {
     echo "formulář byl odeslán"; 
-    var_dump($genres);
-    } else {?>
+    //var_dump($genres);
+    foreach ($genres as $genre) 
+    {
+        echo "</br> $genre";
+    }
+}
+
+     else {?>
     <h1>Vyber oblíbené hry</h1>
     <form method="post">
     
