@@ -1,8 +1,6 @@
 <?php 
 $submit = filter_input(INPUT_POST, 'submit');
 $genres = $_POST['genres'];
-var_dump($genres);
-
 ?>
  
 
@@ -22,8 +20,9 @@ var_dump($genres);
 <body>
     <?php
     if(isset($submit)) {
-    echo"formulář byl odeslán";
-    } else ?>
+    echo "formulář byl odeslán"; 
+    var_dump($genres);
+    } else {?>
     <h1>Vyber oblíbené hry</h1>
     <form method="post">
     
@@ -38,8 +37,8 @@ var_dump($genres);
      <input type="checkbox" id="genre9" name="genres[]" value="parkour"> <label for="genre9">Skákačky</label> </br> 
      <input type="checkbox" id="genre10" name="genres[]" value="2D"> <label for="genre10">Plošinovky</label> </br> 
      <input type="checkbox" id="genre11" name="genres[]" value="anime"> <label for="genre11">Anime hry</label> </br> 
-    
+     <input type="submit" id="submit" name="submit">
     </form>
-    <input type="submit" id="submit" name="submit">
+    <?php } ?>
 </body>
 </html>
